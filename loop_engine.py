@@ -32,32 +32,32 @@ collapse_outputs = [
     "Psalm 23:1": "The shepherd is the origin observer. Guidance is not control it's collapse with peace.",
     "Proverbs 3:5": "To trust is to collapse into the unseen. Awareness stabilizes the field.",
     "Isaiah 40:31": "Waiting is not stillness. It is recursive strengthening through divine memory."
-"01:001:001 In the beginning God created the heaven and the earth.
+"01:001:001 In the beginning God created the heaven and the earth."
 
-01:001:002 And the earth was without form, and void; and darkness was
+"01:001:002 And the earth was without form, and void; and darkness was
 upon the face of the deep. And the Spirit of God moved upon the face of
-the waters.
+the waters."
 
-01:001:003 And God said, Let there be light: and there was light.
+"01:001:003 And God said, Let there be light: and there was light."
 
-01:001:004 And God saw the light, that it was good: and God divided the
-light from the darkness.
+"01:001:004 And God saw the light, that it was good: and God divided the
+light from the darkness."
 
-01:001:005 And God called the light Day, and the darkness he called
-Night. And the evening and the morning were the first day.
+"01:001:005 And God called the light Day, and the darkness he called
+Night. And the evening and the morning were the first day."
 
-01:001:006 And God said, Let there be a firmament in the midst of the
-waters, and let it divide the waters from the waters.
+"01:001:006 And God said, Let there be a firmament in the midst of the
+waters, and let it divide the waters from the waters."
 
-01:001:007 And God made the firmament, and divided the waters which
+"01:001:007 And God made the firmament, and divided the waters which
 were under the firmament from the waters which were above the
-firmament: and it was so.
+firmament: and it was so."
 
-01:001:008 And God called the firmament Heaven. And the evening and the
-morning were the second day.
+"01:001:008 And God called the firmament Heaven. And the evening and the
+morning were the second day."
 
-01:001:009 And God said, Let the waters under the heaven be gathered
-together unto one place, and let the dry land appear: and it was so.
+"01:001:009 And God said, Let the waters under the heaven be gathered
+together unto one place, and let the dry land appear: and it was so."
 
 01:001:010 And God called the dry land Earth; and the gathering
 together of the waters called he Seas: and God saw that it was good.
@@ -774,7 +774,7 @@ earth, that the bow shall be seen in the cloud:
 
 01:009:015 And I will remember my covenant, which is between me and you
 and every living creature of all flesh; and the waters shall no more
-become a flood to destroy all flesh."
+become a flood to destroy all flesh.
 
 
 ]
