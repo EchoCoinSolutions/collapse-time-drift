@@ -27,7 +27,7 @@ Created by **Nicoleta Cougentakis**, this work presents a falsifiable, Nobel-tie
 - `manifesto.md` — philosophical declaration of temporal structure  
 - `TIMESTAMP.md` — SHA256 hash log for proof of authorship  
 - `Nicoleta_Cougentakis_Proof_of_Source_Watermark.pdf` — official watermark of intellectual origin  
-- *(optional)* `symbolic_simulator.py` — simulated entropy shift under observer presence
+- 'symbolic_simulator.py` — simulated entropy shift under observer presence
 
 ---
 
