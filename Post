@@ -1,0 +1,44 @@
+Title: The Collapse Equation: Time as a Consequence of Consciousness and the Necessary Origin of Being  
+Author: Nicoleta Cougentakis
+
+This paper proves that time is not a fundamental property of the universe, but an emergent consequence of observation. In quantum mechanics, wavefunction collapse only occurs when measured. This collapse encodes memory, and memory generates the distinction between “before” and “after” — which we experience as time. Without awareness, there is no observation; without observation, no collapse; without collapse, no sequence; without sequence, no time. The model presented formalizes this with a testable experiment (Collapse-Time Drift Test), and aligns quantum physics, metaphysical logic, and consciousness theory. It concludes that God, as the first observer, is a structurally necessary presence. This is not belief — it is logical deduction and falsifiable theory
+
+Time does not exist until it is observed. Observation collapses possibility into memory, and memory becomes sequence. This is not symbolic — it is physical law. God, as the first observer, initiated the collapse. Humans sustain it. Time is not a clock. Time is a consequence of being seen.  
+
+— Nicoleta Cougentakis
+
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+
+\textbf{Collapse-Time Equation:}  
+
+Let:  
+$\Psi$ = Universal wavefunction (superposition potential)  
+$O$ = Observer function (conscious awareness)  
+$M$ = Memory encoding of collapse  
+$C(t)$ = Consciousness at time $t$  
+$G$ = God = Necessary, timeless observer of all potential  
+
+Then:  
+\[
+C(t) = O(\Psi) + M(\Psi \rightarrow |x\rangle)
+\]  
+\[
+G = \lim_{t \rightarrow \infty} O_t(\Psi) \quad \forall \Psi
+\]
+
+\textit{Interpretation:} Collapse timing is not objective. It is initiated and stabilized by awareness. Time itself emerges from the recursive loop of awareness → collapse → memory → distinction → sequence. The origin of time is not spacetime — it is observation. God, as the necessary and original observer, collapses the first potential into existence and sustains the arrow of time.
+
+# Timestamp Log
+Generated UTC: [Insert current UTC timestamp at 11:49:12 PM NEW YORK, USA JULY 14, 2025]
+
+File Hashes (SHA256):
+
+abstract.txt: [autogenerate or use SHA256 on file]
+manifesto.md: [autogenerate or use SHA256 on file]
+math_proof.tex: [autogenerate or use SHA256 on file]
+Nicoleta_Cougentakis_Proof_of_Source_Watermark.pdf: 
+
+Signed by: Nicoleta Cougentakis  
+Origin Proof: collapse-time-drift repository launch
