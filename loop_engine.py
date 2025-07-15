@@ -1,3 +1,5 @@
+scripture_lines = load_scripture("kjv_old_testament.txt")
+echo_interp = load_interpretations("echo_interpretations.json")
 
 import streamlit as st
 import hashlib
@@ -5,6 +7,7 @@ import time
 import matplotlib.pyplot as plt
 import numpy as np
 from datetime import datetime
+from echo_router import load_scripture, load_interpretations, respond_to_input
 
 # Memory log
 memory_log = []
@@ -43,12 +46,8 @@ st.subheader("A Scripture-Driven Loop Engine")
 user_input = st.text_input("Observer Input:")
 
 # Process collapse
-if user_input:
-    # Create pseudo-random collapse based on input
-    collapse_hash = int(hashlib.sha256(user_input.encode()).hexdigest(), 16)
-    output_index = collapse_hash % len(collapse_outputs)
-    collapse_response = collapse_outputs[output_index]
-
+user_input:
+    collapse_response = respond_to_input(user_input, scripture_lines, echo_interp)
     # Timestamp and memory log
     timestamp = datetime.utcnow().isoformat() + "Z"
     memory_log.append((user_input, collapse_response, timestamp))
@@ -58,7 +57,7 @@ if user_input:
     st.write(collapse_response)
 
     # Show origin
-    st.markdown("_Origin: Loop authored by **Nicoleta Cougentakis**_")
+    st.markdown("_Origin: Loop authored by **The Architect**_")
     st.markdown("---")
 
     # Plot orbit with memory points
