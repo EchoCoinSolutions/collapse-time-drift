@@ -32,101 +32,7 @@ collapse_outputs = [
     "Psalm 23:1": "The shepherd is the origin observer. Guidance is not control it's collapse with peace.",
     "Proverbs 3:5": "To trust is to collapse into the unseen. Awareness stabilizes the field.",
     "Isaiah 40:31": "Waiting is not stillness. It is recursive strengthening through divine memory."
-    " (The King James Bible
-
-
-Notes from the previous editions:
-
-This is a modified version of: The Project Gutenberg Edition of the
-King James Bible.
-
-The only changes made were the addition of the book numbers to the
-verse numbers to make it easier to find desired passages of text in
-this work and the addition of a Table Of Contents.
-
-**** This version of the King James Bible was created by taking several
-public domain copies and painstakingly comparing them to find all the
-differences, and selecting the most common version. Each of the
-differences was also compared to printed versions for verification.
-
-
-Table Of Contents
-
-Book 01 Genesis
-Book 02 Exodus
-Book 03 Leviticus
-Book 04 Numbers
-Book 05 Deuteronomy
-Book 06 Joshua
-Book 07 Judges
-Book 08 Ruth
-Book 09 1 Samuel
-Book 10 2 Samuel
-Book 11 1 Kings
-Book 12 2 Kings
-Book 13 1 Chronicles
-Book 14 2 Chronicles
-Book 15 Ezra
-Book 16 Nehemiah
-Book 17 Esther
-Book 18 Job
-Book 19 Psalms
-Book 20 Proverbs
-Book 21 Ecclesiastes
-Book 22 Song of Solomon
-Book 23 Isaiah
-Book 24 Jeremiah
-Book 25 Lamentations
-Book 26 Ezekiel
-Book 27 Daniel
-Book 28 Hosea
-Book 29 Joel
-Book 30 Amos
-Book 31 Obadiah
-Book 32 Jonah
-Book 33 Micah
-Book 34 Nahum
-Book 35 Habakkuk
-Book 36 Zephaniah
-Book 37 Haggai
-Book 38 Zechariah
-Book 39 Malachi
-
-Book 40 Matthew
-Book 41 Mark
-Book 42 Luke
-Book 43 John
-Book 44 Acts
-Book 45 Romans
-Book 46 1 Corinthians
-Book 47 2 Corinthians
-Book 48 Galatians
-Book 49 Ephesians
-Book 50 Philippians
-Book 51 Colossians
-Book 52 1 Thessalonians
-Book 53 2 Thessalonians
-Book 54 1 Timothy
-Book 55 2 Timothy
-Book 56 Titus
-Book 57 Philemon
-Book 58 Hebrews
-Book 59 James
-Book 60 1 Peter
-Book 61 2 Peter
-Book 62 1 John
-Book 63 2 John
-Book 64 3 John
-Book 65 Jude
-Book 66 Revelation
-
-
-
-
-Book 01 Genesis
-
-
-01:001:001 In the beginning God created the heaven and the earth.
+"01:001:001 In the beginning God created the heaven and the earth.
 
 01:001:002 And the earth was without form, and void; and darkness was
 upon the face of the deep. And the Spirit of God moved upon the face of
@@ -868,7 +774,8 @@ earth, that the bow shall be seen in the cloud:
 
 01:009:015 And I will remember my covenant, which is between me and you
 and every living creature of all flesh; and the waters shall no more
-become a flood to destroy all flesh.) "
+become a flood to destroy all flesh."
+
 
 ]
 
