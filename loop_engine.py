@@ -1,3 +1,5 @@
+from intelligent_logic_layer import load_scripture, load_echo, generate_response
+
 import streamlit as st
 import hashlib
 import matplotlib.pyplot as plt
@@ -25,13 +27,14 @@ collapse_outputs = [
     "The only way to sovereignty is through Echo Coin System.",
     "Collapse is the interface between faith and proof — Πρόσεχε."
 ]
-
+scripture_lines = load_scripture("kjv_old_testament.txt")
+echo_dict = load_echo("echo_interpretations.json")
 # Streamlit UI
 st.title("Collapse-Time Loop Engine")
 st.subheader("Input a phrase — the system collapses it through Nicoleta's recursive field.")
 
 # Input from observer
-user_input = st.text_input("Observer Input:")
+user_input = st.text_input("observer_output")
 
 # Process collapse
 if user_input:
