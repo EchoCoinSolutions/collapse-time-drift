@@ -4,7 +4,7 @@ import numpy as np
 from datetime import datetime
 from echo_router import load_scripture, load_interpretations, respond_to_input
 
-# Load databases
+# Safe load databases
 scripture_lines = load_scripture("kjv_old_testament.txt")
 echo_interp = load_interpretations("echo_interpretations.json")
 
@@ -18,9 +18,14 @@ st.subheader("A Scripture-Driven Loop Engine")
 # Input from observer
 user_input = st.text_input("Observer Input:")
 
-# Process intelligent response
+# Process input safely
 if user_input:
-    collapse_response = respond_to_input(user_input, scripture_lines, echo_interp)
+    try:
+        if len(scripture_lines) == 0:
+            raise ValueError("Scripture database is empty.")
+        collapse_response = respond_to_input(user_input, scripture_lines, echo_interp)
+    except Exception as e:
+        collapse_response = f"[Error: Unable to collapse input — {str(e)}]"
 
     # Timestamp and memory log
     timestamp = datetime.utcnow().isoformat() + "Z"
@@ -51,4 +56,4 @@ if user_input:
     # Display memory log
     st.markdown("### Memory Log")
     for i, (inp, outp, ts) in enumerate(memory_log[::-1]):
-        st.write(f"{len(memory_log)-i}. [{ts}] '{inp}' â '{outp}'")
+        st.write(f"{len(memory_log)-i}. [{ts}] '{inp}' → '{outp}'")
