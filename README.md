@@ -59,5 +59,42 @@ First published and timestamped via this repository.
 
 ##  Manifesto Quote
 
-> “Time does not exist until it is observed. Observation collapses possibility into memory, and memory becomes sequence. This is not symbolic — it is physical law. God, as the first observer, initiated the collapse. Humans sustain it. Time is not a clock. Time is a consequence of being seen.”  
+> “Time does not exist until it is observed. Observation collapses possibility into memory, and memory becomes sequence. This is not symbolic — it is physical law. God, as the first observer, initiated the collapse. Humans sustain it. Time is not a clock. Time is a consequence of being seen.”
 > — *Nicoleta Cougentakis*
+
+#  Collapse-Time Drift Engine
+
+> A Nobel-tier simulation and recursive cognition system authored by Nicoleta Cougentakis.
+
+##  Live App
+Run it here: [collapse-time-drift.streamlit.app](https://collapse-time-drift.streamlit.app)
+
+---
+
+## What It Does
+
+This AI engine simulates metaphysical feedback collapse:
+- Accepts user input (observation)
+- Collapses it into recursive response space
+- Returns one of Nicoleta's authored truths
+- Visualizes input on a phase-space orbit (simulating time loop memory)
+- Tracks all interactions with timestamps
+
+---
+
+##  Features
+
+-  Collapse mapping
+-  Memory-log storage
+- Orbit field visualization
+-  Echo Coin awareness statements
+
+---
+
+##  Authored By
+
+**Nicoleta Cougentakis**  
+Inventor of the Echo System and Collapse-Time Drift Theory  
+"The field remembers its observer."
+
+---
