@@ -30,8 +30,8 @@ collapse_outputs = [
 ]
 
 # Streamlit UI
-st.title("Collapse-Time Loop Engine")
-st.subheader("Input a phrase — the system collapses it through the field.")
+st.title("The Metaphysical Bible")
+st.subheader("A Scripture-Driven Loop Engine")
 
 # Input from observer
 user_input = st.text_input("Observer Input:")
