@@ -28,7 +28,7 @@ collapse_outputs = [
 
 # Streamlit UI
 st.title("Collapse-Time Loop Engine")
-st.subheader("Input a phrase — the system collapses it through the Metaphysical Bible.")
+st.subheader("Input a phrase — the system collapses it through Nicoleta's recursive field.")
 
 # Input from observer
 user_input = st.text_input("Observer Input:")
@@ -45,7 +45,7 @@ if user_input:
     st.markdown("### 🌀 Collapse Output:")
     st.write(collapse_response)
 
-    st.markdown("_Origin: Loop authored by **NC The Creator**_")
+    st.markdown("_Origin: Loop authored by **Nicoleta Cougentakis**_")
     st.markdown("---")
 
     st.markdown("### 🧠 Phase Space Memory Orbit")
