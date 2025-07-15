@@ -31,7 +31,7 @@ collapse_outputs = [
 
 # Streamlit UI
 st.title("Collapse-Time Loop Engine")
-st.subheader("Input a phrase — the system collapses it through Nicoleta's field.")
+st.subheader("Input a phrase — the system collapses it through the field.")
 
 # Input from observer
 user_input = st.text_input("Observer Input:")
