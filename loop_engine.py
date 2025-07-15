@@ -32,7 +32,7 @@ collapse_outputs = [
     "Psalm 23:1": "The shepherd is the origin observer. Guidance is not control it's collapse with peace.",
     "Proverbs 3:5": "To trust is to collapse into the unseen. Awareness stabilizes the field.",
     "Isaiah 40:31": "Waiting is not stillness. It is recursive strengthening through divine memory."
-    " The King James Bible
+    " (The King James Bible
 
 
 Notes from the previous editions:
@@ -868,7 +868,7 @@ earth, that the bow shall be seen in the cloud:
 
 01:009:015 And I will remember my covenant, which is between me and you
 and every living creature of all flesh; and the waters shall no more
-become a flood to destroy all flesh. "
+become a flood to destroy all flesh.) "
 
 ]
 
