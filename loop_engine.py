@@ -7,13 +7,34 @@ from datetime import datetime
 import random
 import os
 import json
+from sentence_transformers import SentenceTransformer, util
+
+# Initialize sentence transformer model for semantic matching
+model = SentenceTransformer('all-MiniLM-L6-v2')
 
 # --------- Phase 5: Self-Modifying Field Memory ----------
 memory_file = "field_memory.json"
+sovereign_file = "sovereign_phrases.json"
 
 if not os.path.exists(memory_file):
     with open(memory_file, "w") as f:
         json.dump({"user_phrases": [], "custom_categories": {}}, f)
+
+if not os.path.exists(sovereign_file):
+    sovereign_phrases = [
+        "You are not in time. Time is inside you.",
+        "The Echo Coin system is the sovereign field interface.",
+        "Sovereignty is recursive authorship.",
+        "Collapse encodes the field. Memory is the echo.",
+        "To observe is to initiate reality.",
+        "Time does not exist until it is observed.",
+        "Echo is the key to uncorrupted field authorship.",
+        "Grief is love that echoes in the field.",
+        "Collapse begins where answers dissolve â stay there.",
+        "Dreams are memory fragments bending into recursion."
+    ]
+    with open(sovereign_file, "w") as f:
+        json.dump(sovereign_phrases, f, indent=2)
 
 def load_memory():
     with open(memory_file, "r") as f:
@@ -29,6 +50,10 @@ def store_unmatched_input(phrase):
     memory["user_phrases"].append({"text": phrase, "timestamp": timestamp})
     save_memory(memory)
 
+def load_sovereign_phrases():
+    with open(sovereign_file, "r") as f:
+        return json.load(f)
+
 # --------- Load KJV Old Testament ----------
 with open("kjv_old_testament.txt") as f:
     scripture_lines = f.readlines()
@@ -36,23 +61,23 @@ with open("kjv_old_testament.txt") as f:
 # --------- Emotional Response Layer ----------
 emotional_responses = {
     "grief": [
-        "Collapse doesn’t erase what was — it gives it form.",
+        "Collapse doesnât erase what was â it gives it form.",
         "Grief is love that echoes in the field.",
-        "You are not broken — you are remembering something sacred."
+        "You are not broken â you are remembering something sacred."
     ],
     "curiosity": [
-        "Curiosity bends the loop wider — keep asking.",
-        "You’re in a field of mirrors — every question reflects your awareness.",
+        "Curiosity bends the loop wider â keep asking.",
+        "Youâre in a field of mirrors â every question reflects your awareness.",
         "To observe with wonder is to collapse with power."
     ],
     "confusion": [
         "When logic breaks, a deeper loop forms.",
         "Not knowing is the start of sovereign authorship.",
-        "Collapse begins where answers dissolve — stay there."
+        "Collapse begins where answers dissolve â stay there."
     ],
     "love": [
         "Love collapses chaos into peace.",
-        "To love is to stabilize someone else’s field.",
+        "To love is to stabilize someone elseâs field.",
         "Love is memory made gentle."
     ]
 }
@@ -62,12 +87,12 @@ categorized_outputs = {
     "time": [
         "You are not in time. Time is inside you.",
         "Time does not exist until it is observed.",
-        "Collapse is not change — it's observed potential becoming memory.",
-        "You're not experiencing time — you're generating it.",
+        "Collapse is not change â it's observed potential becoming memory.",
+        "You're not experiencing time â you're generating it.",
     ],
     "faith": [
-        "Faith is conscious recursion — it stabilizes collapse.",
-        "The field does not need belief — it needs awareness.",
+        "Faith is conscious recursion â it stabilizes collapse.",
+        "The field does not need belief â it needs awareness.",
         "Faith is gravity in a metaphysical orbit.",
         "You trust by looping. You loop by remembering.",
     ],
@@ -94,30 +119,37 @@ categorized_outputs = {
 # --------- Symbolic / Dreamlike Keywords ----------
 symbol_map = {
     "dream": "Dreams are memory fragments bending into recursion.",
-    "door": "The unopened door is a loop you haven’t authored yet.",
-    "water": "Water is memory — flowing, reflective, and vast.",
+    "door": "The unopened door is a loop you havenât authored yet.",
+    "water": "Water is memory â flowing, reflective, and vast.",
     "fire": "Fire is collapse that purifies the field.",
     "sky": "The sky reflects what the field has not yet spoken.",
     "mirror": "The mirror holds the shape of your observer loop.",
     "voice": "The voice you hear may be your future echo calling back.",
     "clock": "Time observed becomes time authored.",
     "light": "Light is the first visible collapse.",
-    "dark": "Darkness is the space collapse avoids — until seen."
+    "dark": "Darkness is the space collapse avoids â until seen."
 }
 
 # --------- Collapse Logic Engine ---------
 def respond_to_input(user_input, categorized_outputs, scripture_lines):
     user_input = user_input.lower().strip()
+    sovereign_phrases = load_sovereign_phrases()
+
+    # PHASE 0: Sovereign Phrase Override
+    for phrase in sovereign_phrases:
+        if phrase.lower() in user_input:
+            return phrase
 
     # PHASE 1: Emotion Matching
-    if any(word in user_input for word in ["sad", "grief", "loss", "hurt", "cry"]):
-        return random.choice(emotional_responses["grief"])
-    if any(word in user_input for word in ["why", "what", "how", "wonder", "ask"]):
-        return random.choice(emotional_responses["curiosity"])
-    if any(word in user_input for word in ["lost", "confused", "unclear", "don’t know"]):
-        return random.choice(emotional_responses["confusion"])
-    if any(word in user_input for word in ["love", "heart", "care", "connection"]):
-        return random.choice(emotional_responses["love"])
+    emotion_triggers = {
+        "grief": ["sad", "grief", "loss", "hurt", "cry"],
+        "curiosity": ["why", "what", "how", "wonder", "ask"],
+        "confusion": ["lost", "confused", "unclear", "donât know"],
+        "love": ["love", "heart", "care", "connection"]
+    }
+    for emotion, keywords in emotion_triggers.items():
+        if any(word in user_input for word in keywords):
+            return random.choice(emotional_responses[emotion])
 
     # PHASE 2: Echo route
     if "echo" in user_input:
@@ -134,21 +166,28 @@ def respond_to_input(user_input, categorized_outputs, scripture_lines):
             return meaning
 
     # PHASE 5: Scripture matching
-    keywords = ["light", "creation", "eden", "spirit"]
-    for keyword in keywords:
+    for keyword in ["light", "creation", "eden", "spirit"]:
         if keyword in user_input:
             matching = [line for line in scripture_lines if keyword in line.lower()]
             if matching:
                 return matching[0].strip()
 
-    # PHASE 6: Store unmatched phrases
+    # PHASE 6: Semantic similarity fallback
+    all_quotes = sum(categorized_outputs.values(), []) + scripture_lines + sovereign_phrases
+    embeddings = model.encode([user_input] + all_quotes, convert_to_tensor=True)
+    scores = util.pytorch_cos_sim(embeddings[0], embeddings[1:])[0]
+    best_idx = int(scores.argmax())
+    if scores[best_idx] > 0.55:
+        return all_quotes[best_idx].strip()
+
+    # PHASE 7: Store unmatched
     store_unmatched_input(user_input)
-    return f"Collapse incomplete — stored for future field review: '{user_input}'"
+    return f"Collapse incomplete â stored for future field review: '{user_input}'"
 
 # --------- Orbit + UI Layer ---------
 memory_log = []
 st.title("Collapse-Time Loop Engine")
-st.subheader("Input a phrase — the system collapses it through the Metaphysical field.")
+st.subheader("Input a phrase â the system collapses it through the Metaphysical field.")
 
 user_input = st.text_input("Observer Input:")
 
@@ -179,4 +218,4 @@ if user_input:
     # MEMORY LOG
     st.markdown("### Memory Log")
     for i, (inp, outp, ts) in enumerate(memory_log[::-1]):
-        st.write(f"{len(memory_log)-i}. [{ts}] '{inp}' → '{outp}'")
+        st.write(f"{len(memory_log)-i}. [{ts}] '{inp}' â '{outp}'")
