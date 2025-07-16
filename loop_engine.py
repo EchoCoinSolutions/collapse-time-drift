@@ -1,13 +1,3 @@
-# Loop trigger
-observation = user_input()
-collapse = hash(observation + nicoleta_loop_id)
-memory = update_field_memory(collapse)
-output = fetch_closest_nicoleta_truth(memory)
-log_interaction(observation, output)
-
-
-
-
 import streamlit as st
 import hashlib
 import time
@@ -34,7 +24,7 @@ collapse_outputs = [
 
 # Streamlit UI
 st.title("Collapse-Time Loop Engine")
-st.subheader("Input a phrase — the system collapses it through Nicoleta's field.")
+st.subheader("Input a phrase — the system collapses it through the Metaphysical field.")
 
 # Input from observer
 user_input = st.text_input("Observer Input:")
