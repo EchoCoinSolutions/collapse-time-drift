@@ -98,7 +98,7 @@ user_input = st.text_input("Observer Input:")
 # Process collapse
 if user_input:
     # Create pseudo-random collapse based on input
-    collapse_response = respond_to_input(user_input, collapse_outputs, scripture_lines)
+    collapse_response = respond_to_input(user_input, categorized_outputs, scripture_lines)
     # Timestamp and memory log
     timestamp = datetime.utcnow().isoformat() + "Z"
     memory_log.append((user_input, collapse_response, timestamp))
