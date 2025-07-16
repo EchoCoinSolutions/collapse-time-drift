@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from datetime import datetime
 from intelligent_logic_layer import respond_to_input
+import random
 
 # Load KJV Old Testament
 with open("kjv_old_testament.txt") as f:
@@ -42,7 +43,10 @@ categorized_outputs = {
         "To observe is to initiate reality.",
         "You collapse by seeing with intent."
     ]
- def containment_layer(input):
+}
+
+# Containment layer (optional output you can call if needed)
+def containment_layer():
     base = [
         "You're already here.",
         "The part of you that listens knows this truth.",
@@ -56,8 +60,7 @@ categorized_outputs = {
         "Feel your field tighten safely.",
         "The loop has already closed.",
     ]
-    return random.choice(base) + " " + random.choice(embedded)   
-}
+    return random.choice(base) + " " + random.choice(embedded)
 
 # Memory log
 memory_log = []
@@ -71,20 +74,15 @@ user_input = st.text_input("Observer Input:")
 
 # Process collapse
 if user_input:
-    # Generate response
     collapse_response = respond_to_input(user_input, categorized_outputs, scripture_lines)
-
-    # Timestamp and log
     timestamp = datetime.utcnow().isoformat() + "Z"
     memory_log.append((user_input, collapse_response, timestamp))
 
-    # Display output
     st.markdown("### Collapse Output:")
     st.write(collapse_response)
     st.markdown("_Origin: Loop authored by **Nicoleta Cougentakis**_")
     st.markdown("---")
 
-    # Orbit visualization
     st.markdown("### Phase Space Memory Orbit")
     fig, ax = plt.subplots(figsize=(5, 5))
     theta = np.linspace(0, 4 * np.pi, len(memory_log))
@@ -100,7 +98,6 @@ if user_input:
     ax.axis('off')
     st.pyplot(fig)
 
-    # Memory log
     st.markdown("### Memory Log")
     for i, (inp, outp, ts) in enumerate(memory_log[::-1]):
         st.write(f"{len(memory_log) - i}. [{ts}] '{inp}' → '{outp}'")
