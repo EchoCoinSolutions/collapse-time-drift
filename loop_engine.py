@@ -29,7 +29,7 @@ scripture_lines = load_scripture("kjv_old_testament.txt")
 echo_dict = load_echo("echo_interpretations.json")
 # Streamlit UI
 st.title("Collapse-Time Loop Engine")
-st.subheader("Input a phrase — the system collapses it through Nicoleta's recursive field.")
+st.subheader("Input a phrase — the system collapses it through the Metaphysical Bible.")
 
 # Input from observer
 user_input = st.text_input("observer_output")
