@@ -10,7 +10,7 @@ import json
 from sentence_transformers import SentenceTransformer, util
 
 # Initialize semantic model
-model = SentenceTransformer('all-MiniLM-L6-v2')
+model = SentenceTransformer('paraphrase-MiniLM-L3-v2')
 
 # File paths
 memory_file = "field_memory.json"
