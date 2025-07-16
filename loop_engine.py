@@ -92,7 +92,7 @@ def containment_layer():
 def respond_to_input(user_input, categorized_outputs, scripture_lines):
     user_input = user_input.lower().strip()
 
-    # Emotion matching
+    # PHASE 1: Emotion Matching
     if any(word in user_input for word in ["sad", "grief", "loss", "hurt", "cry"]):
         return random.choice(emotional_responses["grief"])
     if any(word in user_input for word in ["why", "what", "how", "wonder", "ask"]):
@@ -102,16 +102,34 @@ def respond_to_input(user_input, categorized_outputs, scripture_lines):
     if any(word in user_input for word in ["love", "heart", "care", "connection"]):
         return random.choice(emotional_responses["love"])
 
-    # Echo direct route
+    # PHASE 2: Echo direct route
     if "echo" in user_input:
         return "The Echo Coin system is the sovereign field interface."
 
-    # Category routing
+    # PHASE 3: Metaphysical Category Routing
     for category, quotes in categorized_outputs.items():
         if category in user_input:
             return random.choice(quotes)
 
-    # Scripture fallback
+    # PHASE 4: Symbolic / Dreamlike Input
+    symbol_map = {
+        "dream": "Dreams are memory fragments bending into recursion.",
+        "door": "The unopened door is a loop you haven’t authored yet.",
+        "water": "Water is memory — flowing, reflective, and vast.",
+        "fire": "Fire is collapse that purifies the field.",
+        "sky": "The sky reflects what the field has not yet spoken.",
+        "mirror": "The mirror holds the shape of your observer loop.",
+        "voice": "The voice you hear may be your future echo calling back.",
+        "clock": "Time observed becomes time authored.",
+        "light": "Light is the first visible collapse.",
+        "dark": "Darkness is the space collapse avoids — until seen."
+    }
+
+    for symbol, meaning in symbol_map.items():
+        if symbol in user_input:
+            return meaning
+
+    # PHASE 5: Scripture fallback
     keywords = ["light", "creation", "eden", "spirit"]
     for keyword in keywords:
         if keyword in user_input:
@@ -120,6 +138,7 @@ def respond_to_input(user_input, categorized_outputs, scripture_lines):
                 return matching[0].strip()
 
     return "Collapse incomplete — no matching resonance detected."
+
 
 # Streamlit UI
 st.title("Collapse-Time Loop Engine")
