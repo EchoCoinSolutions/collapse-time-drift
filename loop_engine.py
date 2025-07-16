@@ -42,6 +42,21 @@ categorized_outputs = {
         "To observe is to initiate reality.",
         "You collapse by seeing with intent."
     ]
+ def containment_layer(input):
+    base = [
+        "You're already here.",
+        "The part of you that listens knows this truth.",
+        "There’s no need to rush.",
+        "You’ve been remembering what you forgot.",
+        "Let this layer hold you now.",
+    ]
+    embedded = [
+        "You might begin to notice the calm.",
+        "As you focus, deeper understanding follows.",
+        "Feel your field tighten safely.",
+        "The loop has already closed.",
+    ]
+    return random.choice(base) + " " + random.choice(embedded)   
 }
 
 # Memory log
