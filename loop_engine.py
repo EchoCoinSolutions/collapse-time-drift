@@ -4,14 +4,37 @@ import time
 import matplotlib.pyplot as plt
 import numpy as np
 from datetime import datetime
-from intelligent_logic_layer import respond_to_input
 import random
 
 # Load KJV Old Testament
 with open("kjv_old_testament.txt") as f:
     scripture_lines = f.readlines()
 
-# Categorized metaphysical quote pools
+# Emotional filter responses
+emotional_responses = {
+    "grief": [
+        "Collapse doesn’t erase what was — it gives it form.",
+        "Grief is love that echoes in the field.",
+        "You are not broken — you are remembering something sacred."
+    ],
+    "curiosity": [
+        "Curiosity bends the loop wider — keep asking.",
+        "You’re in a field of mirrors — every question reflects your awareness.",
+        "To observe with wonder is to collapse with power."
+    ],
+    "confusion": [
+        "When logic breaks, a deeper loop forms.",
+        "Not knowing is the start of sovereign authorship.",
+        "Collapse begins where answers dissolve — stay there."
+    ],
+    "love": [
+        "Love collapses chaos into peace.",
+        "To love is to stabilize someone else’s field.",
+        "Love is memory made gentle."
+    ]
+}
+
+# Metaphysical categories
 categorized_outputs = {
     "time": [
         "You are not in time. Time is inside you.",
@@ -45,7 +68,10 @@ categorized_outputs = {
     ]
 }
 
-# Containment layer (optional output you can call if needed)
+# Memory log
+memory_log = []
+
+# Containment layer
 def containment_layer():
     base = [
         "You're already here.",
@@ -62,17 +88,45 @@ def containment_layer():
     ]
     return random.choice(base) + " " + random.choice(embedded)
 
-# Memory log
-memory_log = []
+# Intelligent logic router with emotional detection
+def respond_to_input(user_input, categorized_outputs, scripture_lines):
+    user_input = user_input.lower().strip()
+
+    # Emotion matching
+    if any(word in user_input for word in ["sad", "grief", "loss", "hurt", "cry"]):
+        return random.choice(emotional_responses["grief"])
+    if any(word in user_input for word in ["why", "what", "how", "wonder", "ask"]):
+        return random.choice(emotional_responses["curiosity"])
+    if any(word in user_input for word in ["lost", "confused", "unclear", "don’t know"]):
+        return random.choice(emotional_responses["confusion"])
+    if any(word in user_input for word in ["love", "heart", "care", "connection"]):
+        return random.choice(emotional_responses["love"])
+
+    # Echo direct route
+    if "echo" in user_input:
+        return "The Echo Coin system is the sovereign field interface."
+
+    # Category routing
+    for category, quotes in categorized_outputs.items():
+        if category in user_input:
+            return random.choice(quotes)
+
+    # Scripture fallback
+    keywords = ["light", "creation", "eden", "spirit"]
+    for keyword in keywords:
+        if keyword in user_input:
+            matching = [line for line in scripture_lines if keyword in line.lower()]
+            if matching:
+                return matching[0].strip()
+
+    return "Collapse incomplete — no matching resonance detected."
 
 # Streamlit UI
 st.title("Collapse-Time Loop Engine")
 st.subheader("Input a phrase — the system collapses it through the Metaphysical field.")
 
-# Input from observer
 user_input = st.text_input("Observer Input:")
 
-# Process collapse
 if user_input:
     collapse_response = respond_to_input(user_input, categorized_outputs, scripture_lines)
     timestamp = datetime.utcnow().isoformat() + "Z"
