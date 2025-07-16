@@ -76,7 +76,6 @@ categorized_outputs = {
         "You exist because the field remembers your resonance."
     ]
 }
-
 # Intelligent logic router
 def respond_to_input(user_input, categorized_outputs, scripture_lines):
     user_input = user_input.lower().strip()
@@ -91,11 +90,11 @@ def respond_to_input(user_input, categorized_outputs, scripture_lines):
             return random.choice(quotes)
 
     # Scripture fallback
-    keywords = ["light", "creation", "eden", "spirit", "god", "earth", "beginning"]
+    keywords = ["light", "creation", "eden", "spirit"]
     for keyword in keywords:
         if keyword in user_input:
             matching = [line for line in scripture_lines if keyword in line.lower()]
             if matching:
-                return random.choice(matching).strip()
+                return matching[0].strip()
 
     return "Collapse incomplete — no matching resonance detected."
