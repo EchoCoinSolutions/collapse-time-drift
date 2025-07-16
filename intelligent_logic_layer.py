@@ -13,7 +13,15 @@ categorized_outputs = {
 }
 def respond_to_input(user_input, categorized_outputs, scripture_lines):
     user_input = user_input.lower().strip()
+# Category matching fallback
+for category, quotes in categorized_outputs.items():
+    if category in user_input:
+        return quotes[0]  # You can rotate or randomize later
+import random
 
+# ...in the same category fallback logic:
+return random.choice(quotes)
+    
     # Direct response matching
     if "echo" in user_input:
         return "The Echo Coin system is the sovereign field interface."
