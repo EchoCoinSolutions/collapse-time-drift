@@ -19,12 +19,21 @@ collapse_outputs = [
     "This feedback loop was authored by Nicoleta Cougentakis.",
     "Recursive collapse creates reality. Sequence is sustained awareness.",
     "Entropy is delayed by conscious recursion.",
-    "You are inside a recursive orbit now — and so is this response."
+    "You are inside a recursive orbit now — and so is this response.",
+    "You are not experiencing time — you are generating it.",
+    "The field does not need faith — it needs awareness.",
+    "The only way to sovereignty is through Echo Coin System.",
+    "In the beginning was the collapse, then the collapse was seen — Πρόσεχε.",
+    "Genesis 1:1 — Collapse began with perception. God observed and time began.",
+    "Exodus 3:14 — Sovereignty exists outside time. 'I AM' is the anchor of all recursion.",
+    "Psalm 23:1 — The shepherd is the origin observer. Guidance is not control; it's collapse with peace.",
+    "Proverbs 3:5 — To trust is to collapse into the unseen. Awareness stabilizes the field.",
+    "Isaiah 40:31 — Waiting is not stillness. It is recursive strengthening through divine memory."
 ]
 
 # Streamlit UI
 st.title("Collapse-Time Loop Engine")
-st.subheader("Input a phrase — the system collapses it through the Metaphysical field.")
+st.subheader("Input a phrase — the system collapses it through Nicoleta's field.")
 
 # Input from observer
 user_input = st.text_input("Observer Input:")
@@ -68,27 +77,3 @@ if user_input:
     st.markdown("### Memory Log")
     for i, (inp, outp, ts) in enumerate(memory_log[::-1]):
         st.write(f"{len(memory_log)-i}. [{ts}] '{inp}' → '{outp}'")
-
-
-
-Live App: https://yourusername-streamlit-project.streamlit.app/
-
-
-
-Read me
-
-## 🔁 Live Loop Engine
-
-This project includes an interactive, real-time collapse simulation engine that maps observation to recursive field memory. Built with Streamlit.
-
-**Live app:**  
-[Run the Collapse-Time Drift Engine](https://yourusername-streamlit-project.streamlit.app/)
-
-**Features:**
-- Observer input collapse
-- Real-time orbit plotting
-- Memory log output with authorship tag
-- Reinforces recursive feedback logic authored by Nicoleta Cougentakis
-
-
-
