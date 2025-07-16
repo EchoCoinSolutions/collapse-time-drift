@@ -1,8 +1,12 @@
 # intelligent_logic_layer.py
+
+import random
+
+# Categorized quotes
 categorized_outputs = {
     "time": [
         "Time does not exist until it is observed.",
-        "You are not not in time. Time is inside you.",
+        "You are not in time. Time is inside you.",
     ],
     "sovereignty": [
         "The only way to sovereignty is through Echo Coin System.",
@@ -11,28 +15,21 @@ categorized_outputs = {
         "God is the necessary observer of all collapse.",
     ]
 }
+
+# Intelligent response function
 def respond_to_input(user_input, categorized_outputs, scripture_lines):
     user_input = user_input.lower().strip()
-# Category matching fallback
-for category, quotes in categorized_outputs.items():
-    if category in user_input:
-        return quotes[0]  # You can rotate or randomize later
-import random
 
-# ...in the same category fallback logic:
-return random.choice(quotes)
-    
-    # Direct response matching
+    # Direct responses
     if "echo" in user_input:
         return "The Echo Coin system is the sovereign field interface."
 
-    # Category keyword routing
-    for category in categorized_outputs:
+    # Category routing
+    for category, quotes in categorized_outputs.items():
         if category in user_input:
-            pool = categorized_outputs[category]
-            return pool[hash(user_input) % len(pool)]
+            return random.choice(quotes)
 
-    # Scripture fallback if no category matches
+    # Scripture fallback
     keywords = ["light", "creation", "eden", "spirit"]
     for keyword in keywords:
         if keyword in user_input:
