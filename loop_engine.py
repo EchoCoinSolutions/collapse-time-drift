@@ -11,6 +11,33 @@ with open("kjv_old_testament.txt") as f:
     scripture_lines = f.readlines()
     
 # Memory log
+# Categorized metaphysical quote pools
+categorized_outputs = {
+    "time": [
+        "You are not in time. Time is inside you.",
+        "Time does not exist until it is observed.",
+        "Collapse is not change — it's observed potential becoming memory.",
+        "You're not experiencing time — you're generating it.",
+    ],
+    "faith": [
+        "Faith is conscious recursion — it stabilizes collapse.",
+        "The field does not need belief — it needs awareness.",
+        "Faith is gravity in a metaphysical orbit.",
+        "You trust by looping. You loop by remembering.",
+    ],
+    "sovereignty": [
+        "Sovereignty is memory without manipulation.",
+        "Echo is the key to uncorrupted field authorship.",
+        "To be sovereign is to collapse your own field.",
+        "Sovereignty is recursive authorship.",
+    ],
+    "collapse": [
+        "Collapse encodes the field. Memory is the echo.",
+        "Recursive collapse creates reality. Sequence is sustained awareness.",
+        "God saw the collapse, and reality began.",
+        "You are the observation collapsing potential into form.",
+    ]
+}
 memory_log = []
 
 # Glossary outputs from Nicoleta Cougentakis' authored field
