@@ -4,6 +4,7 @@ import time
 import matplotlib.pyplot as plt
 import numpy as np
 from datetime import datetime
+from intelligent_logic_layer import respond_to_input
 
 # Memory log
 memory_log = []
@@ -66,10 +67,7 @@ user_input = st.text_input("Observer Input:")
 # Process collapse
 if user_input:
     # Create pseudo-random collapse based on input
-    collapse_hash = int(hashlib.sha256(user_input.encode()).hexdigest(), 16)
-    output_index = collapse_hash % len(collapse_outputs)
-    collapse_response = collapse_outputs[output_index]
-
+    collapse_response = respond_to_input(user_input, collapse_outputs)
     # Timestamp and memory log
     timestamp = datetime.utcnow().isoformat() + "Z"
     memory_log.append((user_input, collapse_response, timestamp))
