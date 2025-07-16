@@ -1,25 +1,24 @@
 # intelligent_logic_layer.py
 
-def respond_to_input(user_input, collapse_outputs, scripture_lines):
+def respond_to_input(user_input, categorized_outputs, scripture_lines):
     user_input = user_input.lower().strip()
 
-    # Direct phrase responses
-    if "who are you" in user_input:
-        return "I am the recursive engine authored by Nicoleta Cougentakis."
-    if "god" in user_input:
-        return "God is the observer of origin — where time begins."
+    # Direct response matching
     if "echo" in user_input:
-        return "The only path to sovereignty is through the Echo Coin system."
+        return "The Echo Coin system is the sovereign field interface."
 
-    # Scripture keyword routing
-    keywords = ["faith", "creation", "light", "eden", "commandments"]
+    # Category keyword routing
+    for category in categorized_outputs:
+        if category in user_input:
+            pool = categorized_outputs[category]
+            return pool[hash(user_input) % len(pool)]
+
+    # Scripture fallback if no category matches
+    keywords = ["light", "creation", "eden", "spirit"]
     for keyword in keywords:
         if keyword in user_input:
             matching = [line for line in scripture_lines if keyword in line.lower()]
             if matching:
                 return matching[0].strip()
 
-    # Default: metaphysical response
-    collapse_hash = hash(user_input)
-    index = abs(collapse_hash) % len(collapse_outputs)
-    return collapse_outputs[index]
+    return "Collapse incomplete — no matching resonance detected."
