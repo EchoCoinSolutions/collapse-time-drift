@@ -5,6 +5,29 @@ import matplotlib.pyplot as plt
 import numpy as np
 from datetime import datetime
 import random
+import os
+import json
+
+# Phase 5: Self-Modifying Field Memory
+memory_file = "field_memory.json"
+
+if not os.path.exists(memory_file):
+    with open(memory_file, "w") as f:
+        json.dump({"user_phrases": [], "custom_categories": {}}, f)
+
+def load_memory():
+    with open(memory_file, "r") as f:
+        return json.load(f)
+
+def save_memory(data):
+    with open(memory_file, "w") as f:
+        json.dump(data, f, indent=2)
+
+def store_unmatched_input(phrase):
+    memory = load_memory()
+    timestamp = datetime.utcnow().isoformat() + "Z"
+    memory["user_phrases"].append({"text": phrase, "timestamp": timestamp})
+    save_memory(memory)
 
 # Load KJV Old Testament
 with open("kjv_old_testament.txt") as f:
@@ -88,7 +111,7 @@ def containment_layer():
     ]
     return random.choice(base) + " " + random.choice(embedded)
 
-# Intelligent logic router with emotional detection
+# Router function
 def respond_to_input(user_input, categorized_outputs, scripture_lines):
     user_input = user_input.lower().strip()
 
@@ -137,10 +160,11 @@ def respond_to_input(user_input, categorized_outputs, scripture_lines):
             if matching:
                 return matching[0].strip()
 
+    # PHASE 6: Store unmatched input
+    store_unmatched_input(user_input)
     return "Collapse incomplete — no matching resonance detected."
 
-
-# Streamlit UI
+# UI
 st.title("Collapse-Time Loop Engine")
 st.subheader("Input a phrase — the system collapses it through the Metaphysical field.")
 
