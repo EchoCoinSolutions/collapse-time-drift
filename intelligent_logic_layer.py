@@ -1,5 +1,16 @@
 # intelligent_logic_layer.py
-
+categorized_outputs = {
+    "time": [
+        "Time does not exist until it is observed.",
+        "You are not not in time. Time is inside you.",
+    ],
+    "sovereignty": [
+        "The only way to sovereignty is through Echo Coin System.",
+    ],
+    "collapse": [
+        "God is the necessary observer of all collapse.",
+    ]
+}
 def respond_to_input(user_input, categorized_outputs, scripture_lines):
     user_input = user_input.lower().strip()
 
