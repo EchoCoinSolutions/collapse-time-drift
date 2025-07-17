@@ -1,5 +1,3 @@
 streamlit
 matplotlib
 numpy
-pip install -r requirements.txt
-streamlit run your_script_name.py
